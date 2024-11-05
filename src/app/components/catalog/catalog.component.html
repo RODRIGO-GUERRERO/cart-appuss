@@ -1,0 +1,8 @@
+<div class="row">
+    <product-card
+        *ngFor="let product of products; trackBy: trackByProduct"
+        [product]="product"
+        (productEventEmitter)="onAddToCart($event)"
+        class="col-4 my-2">
+    </product-card>
+</div>

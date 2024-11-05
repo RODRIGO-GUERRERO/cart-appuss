@@ -1,0 +1,11 @@
+<h2>Catálogo de Productos App</h2>
+
+<catalog [products]="products" (productEventEmitter)="onAddCart($event)"></catalog>
+
+<div *ngIf="items.length > 0; else emptyCart">
+    <cart [items]="items" [total]="total" (idProductEventEmitter)="onDeleteCart($event)"></cart>
+</div>
+
+<ng-template #emptyCart>
+    <div class="alert alert-warning">No hay elementos en el carro</div>
+</ng-template>
